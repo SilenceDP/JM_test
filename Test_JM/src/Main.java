@@ -60,16 +60,10 @@ public class Main
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Input:");
-		//String str = scanner.next("[1234567890IVX]");
 		String str = scanner.nextLine();
 		
 		String[] number = str.replace(" ", "").split("[+\\-\\*\\/|]");
-//		for(String s:number) 
-//		{
-//			System.out.println(s);
-//		}
-				
-		//char symbolForce;
+
 		for(int i=0;i<str.length();i++) 
 		{
 			if (str.charAt(i)=='+'||
@@ -84,17 +78,13 @@ public class Main
 				
 				if(valid=="arab")
 			    { 
-			    	//класс арабский
-			    	//Arabik arabik=new Arabik(number[0],number[1],symbolForce);
-			    	
+					// арабские цифры
 					Arabik arabik=new Arabik(number[0],number[1]);
 			    	arabik.setNumber1(number[0]);
 			    	arabik.setNumber2(number[1]);
 					switch (symbolForce) 
 			    	{
 					case '+':
-						//String res= arabik.plus();
-					
 						System.out.println("Output:\n"+arabik.plus());
 						break;
 					case '-':
@@ -112,13 +102,11 @@ public class Main
 			
 			    	    	
 			    }else if (valid=="rim") {
-					// класс римский
-
-			    	
+					// римские цифры
 			    	Roman roman=new Roman(number[0],number[1]);
-			    	
-			    roman.setNumber1(number[0]);
-			    roman.setNumber2(number[1]);
+			    	roman.setNumber1(number[0]);
+			    	roman.setNumber2(number[1]);
+			    
 			    	switch (symbolForce) 
 			    	{
 					case '+':
@@ -136,9 +124,7 @@ public class Main
 					default:
 						break;
 					}
-			    	
-			    	
-			    	
+			    			    	
 				}else if (valid=="error") 
 			    {
 					System.out.println("Ошибка: "+"Неверный аргумент "+number[0]);

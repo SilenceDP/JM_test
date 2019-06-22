@@ -12,10 +12,10 @@ public class Arabik
 	}
 
 
-	public int getNumber1() 
-	{
-		return num1;
-	}
+//	public int getNumber1() 
+//	{
+//		return num1;
+//	}
 
 
 	public void setNumber1(String number1)
@@ -24,10 +24,10 @@ public class Arabik
 	}
 
 
-	public int getNumber2() 
-	{
-		return num2;
-	}
+//	public int getNumber2() 
+//	{
+//		return num2;
+//	}
 
 
 	public void setNumber2(String number2) 
@@ -56,10 +56,17 @@ public class Arabik
 	
 	public String divide () 
 	{
-		result=num1/num2;
+		try {
+			result=num1/num2;
+			
+		} catch (ArithmeticException e) {
+			System.out.println("Деление на ноль недопустимо.");
+		}finally 
+		{
+			System.exit(0);
+		}
+		
 		return String.valueOf(result);
 	}
-
-
 
 }
